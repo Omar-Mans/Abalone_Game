@@ -102,12 +102,6 @@ You can deploy easily using:
 
 ---
 
-## 👨‍💻 Author
-
-Developed as a project combining **game logic + AI + real-time multiplayer**.
-
----
-
 ## ⭐ Don't forget to star the repo!
 
 If you like the project, give it a ⭐ on GitHub!
