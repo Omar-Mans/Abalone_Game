@@ -1,12 +1,4 @@
-/*
- * Abalone game stylesheet.
- *
- * This file defines the modern dark theme used throughout the application.
- * It includes the base board styling, the info panel, control buttons and
- * an additional start screen overlay for selecting game modes.
- */
 
-/* Colour variables */
 :root {
   --bg-top: #334155;
   --bg-mid: #1e293b;
