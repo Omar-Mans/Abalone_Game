@@ -1,21 +1,6 @@
-/*
- * Abalone board game implementation with optional AI opponent.
- *
- * This script encapsulates the complete game logic for Abalone using
- * modern vanilla JavaScript.  It builds the game board, manages user
- * interactions (selection and movement of marbles), tracks history,
- * integrates a Python-based minimax AI via Pyodide, and now includes
- * support for an initial start screen where the player chooses
- * between Human vs Human or Human vs AI modes.  After a mode is
- * selected the game board is revealed and the appropriate game
- * behaviour is activated.
- */
 
 (() => {
-  // ---------------------------------------------------------------------------
-  // Geometry and board setup
-  // ---------------------------------------------------------------------------
-  /** The six axial directions for movement, indexed 0..5. */
+
   const DIRECTIONS = [
     { q: 1, r: 0 },   // 0 east
     { q: 1, r: -1 },  // 1 northeast
