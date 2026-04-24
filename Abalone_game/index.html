@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <title>Abalone – Online + AI</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Pyodide runs the Python AI file in the browser. -->
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"></script>
+
+  <!-- PeerJS is used for Human vs Human online rooms. -->
+  <script src="https://unpkg.com/peerjs@1.5.5/dist/peerjs.min.js"></script>
+</head>
+<body>
+  <div id="start-screen" class="start-screen" aria-label="Game mode selection">
+    <div class="start-card">
+      <h1>Abalone</h1>
+      <p>Select your game mode</p>
+
+      <button id="start-human" class="start-btn">Human vs Human</button>
+
+      <div id="human-menu" class="human-menu" style="display: none;">
+        <button id="start-local" class="start-btn secondary-btn">Play Local</button>
+        <button id="create-room" class="start-btn">Create Online Room</button>
+
+        <div class="join-box">
+          <input id="join-code" type="text" maxlength="6" placeholder="Enter room code" autocomplete="off" />
+          <button id="join-room" class="start-btn secondary-btn">Join Room</button>
+        </div>
+
+        <button id="back-mode" class="link-btn" type="button">Back</button>
+      </div>
+
+      <button id="start-ai" class="start-btn">Human vs AI</button>
+    </div>
+  </div>
+
+  <main id="app-container" class="app-container" style="display: none;">
+    <section class="game-area" aria-label="Game board area">
+      <div id="board" class="board" aria-label="Abalone board"></div>
+
+      <div class="action-buttons">
+        <button id="undo-btn" type="button">Undo</button>
+        <button id="restart-btn" type="button">Restart</button>
+        <button id="new-btn" type="button">New Game</button>
+      </div>
+    </section>
+
+    <aside class="info-panel" aria-label="Game information">
+      <h2>Game Info</h2>
+
+      <div id="turn-info" class="info-row"></div>
+
+      <div id="room-info" class="room-info" style="display: none;">
+        <div class="room-label">Room Code</div>
+        <div id="room-code" class="room-code">-</div>
+        <button id="copy-room" type="button" class="copy-btn">Copy Code</button>
+        <div id="room-status" class="room-status"></div>
+      </div>
+
+      <div class="info-row">
+        <span>Black ejected:</span>
+        <span id="ejected-black">0</span>
+      </div>
+
+      <div class="info-row">
+        <span>White ejected:</span>
+        <span id="ejected-white">0</span>
+      </div>
+
+      <div id="winner-info" class="winner"></div>
+
+      <h3>Move History</h3>
+      <ul id="history-list" class="history-list"></ul>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
